@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <Button>Default</Button>
+    <!-- <Button>Default</Button>
     <Button type="primary">Primary</Button>
     <Button type="ghost">Ghost</Button>
     <Button type="dashed">Dashed</Button>
@@ -9,9 +9,16 @@
     <Button type="info">Info</Button>
     <Button type="success">Success</Button>
     <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Button type="error">Error</Button> -->
     <ul>
-      <li v-for="item in msg" :key="item.id">{{item.name}}</li>
+      <li v-for="item in msg" :key="item.id">
+        <img :src="item.img" alt="">
+        <p>
+          <label >{{item.name}}</label>
+          <label >{{item.price}}</label>
+        </p>
+        <p>{{item.weight}}</p>
+      </li>
     </ul>
   </div>
 </template>
@@ -44,6 +51,9 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+}
+li:hover{
+  cursor:pointer;
 }
 a {
   color: #42b983;
