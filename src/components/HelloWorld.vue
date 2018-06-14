@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <Button>Default</Button>
     <Button type="primary">Primary</Button>
     <Button type="ghost">Ghost</Button>
@@ -11,6 +10,9 @@
     <Button type="success">Success</Button>
     <Button type="warning">Warning</Button>
     <Button type="error">Error</Button>
+    <ul>
+      <li v-for="item in msg" :key="item.id">{{item.name}}</li>
+    </ul>
   </div>
 </template>
 
@@ -19,8 +21,13 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: []
     }
+  },
+  created(){
+    axios.get('http://localhost:8080/static/hotFruit.json').then((resp) => {
+      this.msg=resp.data
+    })
   }
 }
 </script>
