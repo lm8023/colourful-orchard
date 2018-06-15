@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <Button>Default</Button>
+    <!-- <Button>Default</Button>
     <Button type="primary">Primary</Button>
     <Button type="ghost">Ghost</Button>
     <Button type="dashed">Dashed</Button>
@@ -10,7 +9,17 @@
     <Button type="info">Info</Button>
     <Button type="success">Success</Button>
     <Button type="warning">Warning</Button>
-    <Button type="error">Error</Button>
+    <Button type="error">Error</Button> -->
+    <ul>
+      <li v-for="item in msg" :key="item.id">
+        <img :src="item.img" alt="">
+        <p>
+          <label >{{item.name}}</label>
+          <label >{{item.price}}</label>
+        </p>
+        <p>{{item.weight}}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -19,8 +28,13 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: []
     }
+  },
+  created(){
+    axios.get('http://localhost:8080/static/hotFruit.json').then((resp) => {
+      this.msg=resp.data
+    })
   }
 }
 </script>
@@ -37,6 +51,9 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+}
+li:hover{
+  cursor:pointer;
 }
 a {
   color: #42b983;
