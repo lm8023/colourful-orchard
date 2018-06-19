@@ -27,7 +27,12 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      "iview-css":"iview/dist/styles/iview.css"
+      '@page': resolve('src/components/pages'),
+      "iview-css":"iview/dist/styles/iview.css",
+      'swiper-css':"swiper/dist/css/swiper.css",
+      'swiper-js':"swiper/dist/js/swiper.js",
+      'layui-css':'layui-src/dist/css/layui.css',
+      'layui-js':'layui-src/dist/layui.all.js'
     }
   },
   module: {
