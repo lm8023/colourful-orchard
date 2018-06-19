@@ -4,6 +4,7 @@ import Home from '@page/home/Home'
 import Cart from '@page/cart/Cart'
 import Person from '@page/person/Person'
 import Search from '@page/search/Search'
+import GoodsInfo from '@page/goodsinfo/GoodsInfo'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/person',
       name: 'Person',
       component: Person
+    },
+    {
+      path: '/goodsinfo',
+      name: 'GoodsInfo',
+      component: GoodsInfo
     }
   ]
 })
