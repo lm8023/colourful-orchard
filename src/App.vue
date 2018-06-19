@@ -66,7 +66,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    div {
+    &>div {
         height: calc(100% - 110px);
 
         overflow-x: hidden;
