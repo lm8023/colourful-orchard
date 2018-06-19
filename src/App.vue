@@ -65,6 +65,7 @@ footer ul li{
   height: 100%;
   text-align: center;
   width: 25%;
+  cursor:pointer;
 
 }
 </style>
