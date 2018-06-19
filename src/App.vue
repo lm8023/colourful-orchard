@@ -4,7 +4,10 @@
     <router-view/>
     <footer>
       <ul>
-        <li v-for="(nav,index) in navName" :key="nav.id" @click="btn(index)">{{nav}}</li>
+        <li v-for="(nav,index) in navName" :key="nav.id" @click="btn(index,$router.options.routes[index+1].name)">
+          <span class="icon"><Icon :type="nav.icon"></Icon></span>
+          <span class="typeface">{{nav.name}}</span>
+        </li>
       </ul>
     </footer>
   </div>
@@ -15,20 +18,38 @@ export default {
   name: 'App',
   data(){
     return {
-      navName:["首页","分类","购物车","个人中心"],
+      navName:[
+          {
+              name:"首页",
+              icon:"android-home"
+          },
+          {
+              name:"搜索",
+              icon:"android-search"
+          },
+          {
+              name:"购物车",
+              icon:"android-cart"
+          },
+          {
+              name:"个人中心",
+              icon:"person"
+          }
+          ],
       headName:'首页'
     }
   },
   methods:{
-    btn(index){
-      this.headName=this.navName[index]
+    btn(index,paogram){
+      this.headName=this.navName[index];
+      this.$router.push({name: paogram});
     }
   }
 
 }
 </script>
 
-<style>
+<style lang="scss">
 html,body{
   height: 100%;
   font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
@@ -49,7 +70,6 @@ header{
 footer{
   height: 60px;
   background-color: blue;
-  line-height: 60px;
 }
 #app div{
   height: calc(100% - 110px);
@@ -66,5 +86,21 @@ footer ul li{
   text-align: center;
   width: 25%;
 
+}
+footer{
+    ul{
+        li{
+            padding: 6px;
+            span{
+                display: block;
+            }
+        }
+    }
+}
+.typeface{
+    font-size: 0.8rem
+}
+.icon{
+    font-size: 1.2rem
 }
 </style>
