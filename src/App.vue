@@ -71,7 +71,7 @@ footer{
   height: 60px;
   background-color: blue;
 }
-#app div{
+#app>div{
   height: calc(100% - 110px);
   overflow-x: hidden;
   overflow-y: auto;
