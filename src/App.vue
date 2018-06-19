@@ -71,6 +71,7 @@ body {
 
         overflow-x: hidden;
         overflow-y: auto;
+        
     }
 }
 
@@ -79,6 +80,7 @@ header {
     color: #fff;
     background-color: #019418;
     line-height: 50px;
+  
 }
 .red {
     color: #fe4791;
