@@ -41,7 +41,7 @@ export default {
   },
   methods:{
     btn(index,paogram){
-      this.headName=this.navName[index];
+      this.headName=this.navName[index].name;
       this.$router.push({name: paogram});
     }
   }
@@ -73,6 +73,7 @@ footer{
 }
 #app div{
   height: calc(100% - 110px);
+  padding: 6px 8px;
   overflow-x: hidden;
   overflow-y: auto;
 }
