@@ -2,8 +2,16 @@
     <div>
         <section><img :src="goodsdata.img" alt=""></section>
         <section>
-            <li><label>价格</label><span>{{goodsdata.price}}</span><label>规格/份</label><span>{{goodsdata.weight}}</span></li>
-            <li><span>{{goodsdata.PlaceofOrigin}}</span><span>{{goodsdata.nutrientelements}}</span></li>
+            <li>
+                <label>价格</label>
+                <span>{{goodsdata.price}}</span>
+                <label>规格/份</label>
+                <span>{{goodsdata.weight}}</span>
+           </li>
+            <li>
+                <span>{{goodsdata.PlaceofOrigin}}</span>
+                <span>{{goodsdata.nutrientelements}}</span>
+            </li>
         </section>
     </div>
 </template>

@@ -59,6 +59,9 @@ body {
     font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
     font-size: 16px;
 }
+img{
+    width: 150px;
+}
 
 #app {
     height: 100%;
@@ -79,24 +82,29 @@ header {
     color: #fff;
     background-color: #019418;
     line-height: 50px;
+
 }
+$color: #fe4791;
 .red {
-    color: #fe4791;
+    color:$color;
+   
 }
 
 footer {
     height: 60px;
     ul {
         height: 100%;
-        border-top: 1px solid #fe4791;
+        border-top: 1px solid $color;
         li {
+          
             padding: 6px;
             float: left;
-            color: #0eb08f;
+            color:	#7B7B7B;
             list-style-type: none;
             height: 100%;
             text-align: center;
             width: 25%;
+            
             span {
                 display: block;
             }
